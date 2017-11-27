@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+
+<!--pasiimam dali kodo is kitos vietos-->
+<head th:replace="common/templates :: temp-header"/>
+<body>
+<div th:replace="common/templates :: navbar"/>
+<div th:replace="common/templates :: sideNavbar"></div>
+
+              <!--&lt;!&ndash;pasiimam is kontrolerio varda     &ndash;&gt;-->
+<!--Welcome <span th:text="${name}"></span> !!! you logged in!-->
+<!--<div sec:authorize="hasAuthority('USER')">-->
+    <!--Labas Useri-->
+<!--</div>-->
+
+<!--<h2 th:text="${#authentication.getName()}"></h2>-->
+
+<div th:replace="common/templates :: bottom-scripts"/>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:fragment="temp-header">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Intranet</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div th:fragment="navbar">
+    <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
+        </ul>
+    </div>
+    </nav>
+</div>
+
+<div th:fragment="sideNavbar">
+    <div id="mySidenav" class="sidenav">
+        <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+        <a href="#">Naujienos</a>
+        <a href="/add">Kolegos</a>
+        <a href="/add">Add poll</a>
+        <a href="#">Gimtadieniai</a>
+        <a href="#">Nėra darbe</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+
+<div th:fragment="bottom-scripts">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</div>
+
+
+</body>
+</html>
