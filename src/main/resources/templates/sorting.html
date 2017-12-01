@@ -10,13 +10,13 @@
 <div th:replace="common/templates :: navbar"/>
 <div th:replace="common/templates :: sideNavbar"></div>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-              <!--&lt;!&ndash;pasiimam is kontrolerio varda     &ndash;&gt;-->
-<!--Welcome <span th:text="${name}"></span> !!! you logged in!-->
-<!--<div sec:authorize="hasAuthority('USER')">-->
-    <!--Labas Useri-->
-<!--</div>-->
 
-<!--<h2 th:text="${#authentication.getName()}"></h2>-->
+<form method="post" th:action="@{/sortResult}" >
+    <input type="number"  name="nr1"/>
+    <input type="number"  name="nr2"/>
+    <hr />
+    <input type="submit" />
+</form>
 
 <div th:replace="common/templates :: bottom-scripts"/>
 </body>

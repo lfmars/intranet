@@ -9,9 +9,27 @@
 <body>
 <div th:replace="common/templates :: navbar"/>
 <div th:replace="common/templates :: sideNavbar"></div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
-adding poll
-<form></form>
+<form method="post" th:action="@{/test1}" >
+    <input type="text"  name="q1"/>
+    <hr />
+    <input type="text" name="ans" />
+    <input type="text" name="ans" />
+    <input type="submit" />
+</form>
+
+
+<!--<form>-->
+    <!--<table>-->
+        <!--<tr th:each="poolAnswer, rowStat : *{poolAnswers}">-->
+            <!--<td>-->
+                <!--<input type="text" class="form-control" th:field="poolAnswers[__${rowStat.index}__].answer"/>-->
+            <!--</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</form>-->
+
 
 <div th:replace="common/templates :: bottom-scripts"/>
 </body>

@@ -28,8 +28,8 @@ public class PollServiceImp implements PollService {
         Poll newPoll = pollRepository.findByQuestion(poll.getQuestion());
         if(newPoll != null){
             System.out.println("LOOOGAS, poolas jau sukurtas");
-        }else {
-
+        }
+        else {
          //   poll.getPollAnswers().addAll(pollAnswers);
             newPoll = pollRepository.save(poll);
             for (PollAnswer answer : pollAnswers){
@@ -39,8 +39,6 @@ public class PollServiceImp implements PollService {
         }
         return newPoll;
     }
-
-
 
     @Override
     public Poll save(Poll poll) {

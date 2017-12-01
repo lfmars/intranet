@@ -2,7 +2,6 @@ package lt.marius.intranet.controller;
 
 import lt.marius.intranet.models.Users;
 import lt.marius.intranet.service.UserService;
-import org.hibernate.validator.internal.util.privilegedactions.GetMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,6 +27,7 @@ public class HomeController {
         Users users = userService.findByUsername(auth.getName());
         //paduodam i puslapi
         model.addAttribute("name", users.getName());
+
         return "index";
     }
 
@@ -35,5 +35,6 @@ public class HomeController {
     public String login(){
         return "login";
     }
+
 
 }

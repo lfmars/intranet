@@ -51,8 +51,8 @@ public class IntranetApplication implements CommandLineRunner{
 		usersRoles.add(new UsersRole(users,role));
 		userService.createUser(users, usersRoles);
 
-		List<Users>usersList = userService.findByDate();
-		//System.out.println(usersList.size()); --cia isprintina kiek useriu svencia gimtadieni, mini test
+		//List<Users>usersList = userService.findByDate(); --cia isprintina kiek useriu svencia gimtadieni, mini test
+		//System.out.println(usersList.size());
 
 		System.out.println("userio id = " + users.getId());
 		Poll firstPoll = new Poll();
@@ -60,14 +60,14 @@ public class IntranetApplication implements CommandLineRunner{
 		firstPoll.setQuestion("Ar gerai tau?");
 		List<PollAnswer> pollAnswers = new ArrayList<>();
 		PollAnswer answer1 = new PollAnswer();
+		//answer1.setPollId(firstPoll.getPollId());
 		answer1.setAnswer("Ne");
 		PollAnswer answer2 = new PollAnswer();
+		//answer2.setPollId(firstPoll.getPollId());
 		answer2.setAnswer("Taip");
 		pollAnswers.add(answer1);
 		pollAnswers.add(answer2);
-
 		pollService.createPoll(firstPoll, pollAnswers);
-
 
 
 	}

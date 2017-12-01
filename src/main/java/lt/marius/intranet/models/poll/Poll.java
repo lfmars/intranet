@@ -1,6 +1,7 @@
 package lt.marius.intranet.models.poll;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,6 +16,10 @@ public class Poll {
 
     @Column(name = "USER_ID")
     private Long userId;
+
+    private Date creatingTime;
+
+
 
     @OneToMany
     @JoinColumn(name = "POLL_ID", referencedColumnName = "POLL_ID")
@@ -62,6 +67,14 @@ public class Poll {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public Date getCreatingTime() {
+        return creatingTime;
+    }
+
+    public void setCreatingTime(Date creatingTime) {
+        this.creatingTime = creatingTime;
     }
 
 
