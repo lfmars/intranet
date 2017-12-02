@@ -1,6 +1,7 @@
 package lt.marius.intranet.controller;
 
 import lt.marius.intranet.models.Users;
+import lt.marius.intranet.service.PollService;
 import lt.marius.intranet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -15,6 +16,9 @@ public class HomeController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    PollService pollService;
+
     @RequestMapping("/")
     public String index(){
         return "redirect:/index";
@@ -27,7 +31,7 @@ public class HomeController {
         Users users = userService.findByUsername(auth.getName());
         //paduodam i puslapi
         model.addAttribute("name", users.getName());
-
+        System.out.println("Last poll id --->" +pollService.returnLastPollId());
         return "index";
     }
 

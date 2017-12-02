@@ -44,4 +44,10 @@ public class PollServiceImp implements PollService {
     public Poll save(Poll poll) {
         return pollRepository.save(poll);
     }
+
+    @Override
+    public Long returnLastPollId() {
+        return pollRepository.getLastId();
+      //  return null;
+    }
 }
